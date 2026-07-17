@@ -10,7 +10,7 @@
  */
 class Solution {
     public ListNode reverseList(ListNode head) {
-       ListNode prev=null;
+       /*ListNode prev=null;
        ListNode next1;
        ListNode cur=head;
        while(cur!=null){
@@ -20,5 +20,14 @@ class Solution {
         cur=next1;
        } 
        return prev;
+       */
+       if(head==null||head.next==null){
+        return head;
+       }
+       ListNode newnode=reverseList(head.next);
+       head.next.next=head;
+       head.next=null;
+       return newnode;
     }
+    
 }
